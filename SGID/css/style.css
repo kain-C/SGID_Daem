@@ -1,0 +1,346 @@
+/* Estilo para la barra superior */
+.topbar {
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: black; /* Color del texto negro */
+    padding: 10px 20px; /* Espaciado interno */
+    display: flex; /* Usar flexbox para la disposición */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Alinear elementos verticalmente en el centro */
+    position: fixed; /* Fijar la posición en la parte superior */
+    top: 0; /* Posición en la parte superior de la página */
+    left: 0; /* Posición a la izquierda de la página */
+    z-index: 999; /* Asegurarse de que esté por encima de otros elementos */
+    height: 50px; /* Altura fija */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    transition: left 0.3s, width 0.3s; /* Transiciones suaves para cambios de posición y tamaño */
+}
+
+.topbar img {
+    margin-right: 10px; /* Espaciado a la derecha de la imagen */
+    height: 30px; /* Altura fija de la imagen */
+}
+
+.toggle-sidebar-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+    margin-right: 15px;
+}
+
+.user-menu {
+    display: flex; /* Usar flexbox para la disposición */
+    align-items: center; /* Alinear elementos en el centro */
+}
+
+.user-menu .btn-user {/*logo simbolo de usuario*/
+    background-color: #7504ee; /* Color de fondo morado */
+    color: #ffffff; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    font-size: 24px; /* Tamaño del icono */
+    display: flex; /* Usar flexbox para la disposición */
+    align-items: center; /* Alinear elementos verticalmente en el centro */
+    justify-content: center; /* Centrar el icono */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 45px; /* Ancho fijo */
+    height: 45px; /* Altura fija */
+    margin-right: 10px; /* Espaciado a la derecha */
+    transition: transform 0.3s ease; /* Transición para el movimiento */
+}
+
+.user-menu .btn-user:hover {
+    transform: scale(1.1); /* Efecto de movimiento al pasar el cursor */
+    background-color: #5e03c7; /* Color de fondo ligeramente más oscuro */
+}
+
+.user-menu .btn-logout {
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: red; /* Color del icono rojo */
+    border: none; /* Sin borde */
+    font-size: 24px; /* Tamaño del icono */
+    display: flex; /* Usar flexbox para la disposición */
+    align-items: center; /* Alinear elementos verticalmente en el centro */
+    justify-content: center; /* Centrar el icono */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 45px; /* Ancho fijo */
+    height: 45px; /* Altura fija */
+    transition: transform 0.3s ease; /* Transición para el movimiento */
+}
+
+.user-menu .btn-logout:hover {
+    transform: scale(1.1); /* Efecto de movimiento al pasar el cursor */
+    background-color: #f8f9fa; /* Color de fondo ligeramente más oscuro */
+}
+
+.user-menu .dropdown-menu {
+    right: 0; /* Alinear a la derecha */
+    left: auto; /* Desactivar alineación a la izquierda */
+}
+
+.user-menu .dropdown-toggle::after {
+    display: none; /* Ocultar el icono de despliegue del botón de la barra superior */
+}
+
+/* Estilo para la barra lateral */
+.sidebar {
+    position: fixed; /* Fijar la posición en la pantalla */
+    top: 50px; /* Alinear debajo de la barra superior */
+    bottom: 0; /* Alinear a la parte inferior */
+    left: 0; /* Alinear a la izquierda */
+    width: 250px; /* Ancho fijo */
+    background-color: #2873be; /* Color de fondo azul */
+    box-shadow: 0px 2px 5px rgba(4, 2, 27, 0.858); /* Sombra para dar profundidad */
+    padding-top: 20px; /* Espaciado interno superior */
+    overflow: hidden; /* Ocultar el desbordamiento */
+    z-index: 1001; /* Asegurarse de que esté por encima de otros elementos */
+    display: flex; /* Usar flexbox para la disposición */
+    flex-direction: column; /* Disposición de columna */
+    color: #fff; /* Color del texto blanco */
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out; /* Transiciones suaves para cambios de posición y tamaño */
+}
+
+.sidebar.hidden {
+    transform: translateX(-250px); /* Mover la barra lateral fuera de la vista */
+    width: 0; /* Ancho cero */
+}
+
+.sidebar-logo {
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.sidebar-logo img {
+    width: 80px; /* Ancho fijo */
+    height: 80px; /* Altura fija */
+    border-radius: 50%; /* Imagen circular */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.sidebar-logo h4, .sidebar-logo p {
+    margin: 0; /* Sin margen */
+}
+
+.sidebar-logo h4 {
+    font-size: 1.2rem; /* Tamaño de la fuente */
+}
+
+.sidebar-logo p {
+    font-size: 0.9rem; /* Tamaño de la fuente */
+    color: #ccc; /* Color del texto gris claro */
+}
+
+.sidebar-menu {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin relleno */
+    margin: 0; /* Sin margen */
+    flex-grow: 1; /* Crecer para llenar el espacio disponible */
+}
+
+.sidebar-menu .menu-item {
+    position: relative; /* Posición relativa */
+}
+
+.sidebar-menu .menu-item > a {
+    color: #ffffff; /* Color del texto blanco */
+    display: flex; /* Usar flexbox para la disposición */
+    align-items: center; /* Alinear elementos verticalmente en el centro */
+    justify-content: space-between; /* Espacio entre los elementos */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: 0.3s ease, color 0.3s ease; /* Transición para el color de fondo y el color del texto */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1rem; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor de puntero */
+}
+
+.sidebar-menu .menu-item > a:hover {
+    background-color: #1e63ca; /* Color de fondo azul oscuro al pasar el mouse */
+    color: #ffffff; /* Color del texto blanco */
+}
+
+.sidebar-menu .menu-item .bi {
+    margin-right: 15px; /* Espaciado a la derecha del icono */
+    font-size: 1.3rem; /* Tamaño de la fuente del icono */
+}
+
+.sidebar-menu .submenu {
+    display: none; /* Ocultar el submenú por defecto */
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin relleno */
+    margin: 0; /* Sin margen */
+}
+
+.sidebar-menu .submenu.active {
+    display: block; /* Mostrar el submenú cuando está activo */
+}
+
+.sidebar-menu .nav-link.active {
+    background-color: #007bff; /* Color de fondo azul para el enlace activo */
+    color: #fff; /* Color del texto blanco */
+}
+
+.sidebar-menu .submenu li {
+    padding-left: 20px; /* Espaciado a la izquierda */
+}
+
+.sidebar-menu .submenu a {
+    display: block; /* Mostrar como bloque */
+    padding: 8px 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño de la fuente */
+    color: #fff; /* Color del texto blanco */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.sidebar-menu .submenu a:hover {
+    background-color: #3d3ddc; /* Color de fondo azul oscuro al pasar el mouse */
+    color: #ffffff; /* Color del texto blanco */
+}
+
+.sidebar-profile {
+    text-align: center; /* Centrar el texto */
+    padding: 20px; /* Espaciado interno */
+    background-color: #0b4f8fdf; /* Color de fondo azul oscuro */
+    border-top: 1px solid #bfbfd3; /* Borde superior */
+}
+
+.user-initials {
+    display: inline-block; /* Mostrar como un bloque en línea */
+    width: 50px; /* Ancho fijo */
+    height: 50px; /* Altura fija */
+    background-color: #7504ee; /* Color de fondo morado */
+    color: #ffffff; /* Color del texto blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 20px; /* Tamaño de la fuente */
+    line-height: 50px; /* Altura de línea para centrar el texto verticalmente */
+    text-align: center; /* Alinear el texto al centro */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+/* Contenedor de contenido */
+.content-container {
+    margin-top: 50px; /* Margen superior */
+    margin-left: 250px; /* Margen izquierdo para dejar espacio para la barra lateral */
+    padding: 20px; /* Espaciado interno */
+    display: flex; /* Usar flexbox para la disposición */
+    flex-direction: column; /* Disposición de columna */
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out; /* Transiciones suaves para cambios de margen y ancho */
+}
+
+.content-container.expanded {
+    margin-left: 0; /* Sin margen izquierdo */
+    width: 100%; /* Ancho completo */
+}
+
+.table-responsive {
+    overflow-x: auto; /* Desplazamiento horizontal automático */
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en dispositivos táctiles */
+}
+
+.table {
+    width: 100%; /* Ancho completo */
+    table-layout: auto; /* Ajuste automático del ancho de las columnas */
+}
+
+/* Estilos personalizados para los botones */
+.table .button-group .btn {
+    white-space: nowrap; /* Evita que el texto se desborde en múltiples líneas */
+    padding: 5px 10px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+
+/* Estilos personalizados */
+.modal-body p {
+    margin-bottom: 0.5rem; /* Margen inferior */
+}
+
+.modal-body p strong {
+    color: #bad2ed; /* Color del texto */
+}
+
+.modal-footer {
+    justify-content: center; /* Centrar el contenido */
+}
+
+.dashboard-card {
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.dashboard-card .card-body {
+    display: flex; /* Usar flexbox para la disposición */
+    align-items: center; /* Alinear elementos verticalmente en el centro */
+    justify-content: space-between; /* Espacio entre los elementos */
+}
+
+.dashboard-card .card-body .card-title {
+    margin-bottom: 0; /* Sin margen inferior */
+}
+
+#calendar {
+    max-width: 80%; /* Ancho máximo del 80% */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.modal-lg {
+    max-width: 80%; /* Ancho máximo del 80% */
+}
+
+.modal-header {
+    background-color: #eaeaea; /* Color de fondo gris claro */
+    color: rgb(0, 0, 0); /* Color del texto negro */
+}
+
+.modal-footer {
+    background-color: #f1f1f1; /* Color de fondo gris claro */
+}
+
+.qr-container {
+    padding: 10px; /* Espaciado interno */
+    border: 2px solid #000; /* Borde negro */
+    border-radius: 15px; /* Bordes redondeados */
+    display: inline-block; /* Mostrar como un bloque en línea */
+    position: relative; /* Posición relativa */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+/* Estilo de la vista calendario */
+#calendar {
+    width: 100%; /* Ancho completo */
+    height: 800px; /* Altura fija */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.fc-button-primary:disabled {
+    background-color: #6c757d; /* Color de fondo gris para botones deshabilitados */
+}
+
+.modal-dialog.modal-dialog-wide {
+    max-width: 80%; /* Ancho máximo del 80% */
+}
+
+/* Evitar que el contenido del modal se desborde */
+.modal-content {
+    overflow: hidden; /* Ocultar el desbordamiento */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: scroll; /* Desplazamiento horizontal */
+    }
+
+    .table {
+        display: block; /* Mostrar como bloque */
+    }
+    
+    .btn-group {
+        flex-direction: column; /* Apilar verticalmente */
+    }
+
+    .btn {
+        width: 100%; /* Ancho completo */
+        margin-bottom: 5px; /* Margen inferior */
+    }
+}
